@@ -1,0 +1,147 @@
+Microsoft Windows [Version 10.0.26200.8037]
+(c) Microsoft Corporation. All rights reserved.
+
+E:\file_struct>conda activate env310
+
+(env310) E:\file_struct>pip install django
+Requirement already satisfied: django in c:\users\umesh\miniconda3\envs\env310\lib\site-packages (5.2.12)
+Requirement already satisfied: asgiref>=3.8.1 in c:\users\umesh\miniconda3\envs\env310\lib\site-packages (from django) (3.11.1)
+Requirement already satisfied: sqlparse>=0.3.1 in c:\users\umesh\miniconda3\envs\env310\lib\site-packages (from django) (0.5.5)
+Requirement already satisfied: tzdata in c:\users\umesh\miniconda3\envs\env310\lib\site-packages (from django) (2025.3)
+Requirement already satisfied: typing_extensions>=4 in c:\users\umesh\miniconda3\envs\env310\lib\site-packages (from asgiref>=3.8.1->django) (4.15.0)
+
+(env310) E:\file_struct>django-admin startproject myproject
+
+(env310) E:\file_struct>cd myproject
+
+(env310) E:\file_struct\myproject>python manage.py startapp myapp
+
+(env310) E:\file_struct\myproject>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 20, 2026 - 01:24:46
+Django version 5.2.12, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+
+(env310) E:\file_struct\myproject>code .
+
+python train_model.py
+python train_model.py
+python train_model.py
+python train_model.py
+
+
+(env310) E:\file_struct\myproject>python manage.py makemigrations
+No changes detected
+
+(env310) E:\file_struct\myproject>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(env310) E:\file_struct\myproject>python manage.py showmigrations
+admin
+ [X] 0001_initial
+ [X] 0002_logentry_remove_auto_add
+ [X] 0003_logentry_add_action_flag_choices
+auth
+ [X] 0001_initial
+ [X] 0002_alter_permission_name_max_length
+ [X] 0003_alter_user_email_max_length
+ [X] 0004_alter_user_username_opts
+ [X] 0005_alter_user_last_login_null
+ [X] 0006_require_contenttypes_0002
+ [X] 0007_alter_validators_add_error_messages
+ [X] 0008_alter_user_username_max_length
+ [X] 0009_alter_user_last_name_max_length
+ [X] 0010_alter_group_name_max_length
+ [X] 0011_update_proxy_permissions
+ [X] 0012_alter_user_first_name_max_length
+contenttypes
+ [X] 0001_initial
+ [X] 0002_remove_content_type_name
+myapp
+ (no migrations)
+sessions
+ [X] 0001_initial
+
+(env310) E:\file_struct\myproject>python manage.py createsuperuser
+Username (leave blank to use 'umesh'): admin
+Email address: umeshsamartapu@gmail.com
+Password:
+Password (again):
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+
+
+
+(env310) E:\file_struct\myproject>python manage.py dbshell
+SQLite version 3.51.1 2025-11-28 17:28:25
+Enter ".help" for usage hints.
+sqlite> .tables
+auth_group                  auth_user_user_permissions
+auth_group_permissions      django_admin_log
+auth_permission             django_content_type
+auth_user                   django_migrations
+auth_user_groups            django_session
+sqlite> .exit
+
+(env310) E:\file_struct\myproject>
+
+
+
+python train_model.py
+python train_model.py
+python train_model.py
+python train_model.py
+
+
+
+(env310) E:\file_struct\myproject>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, myapp, sessions
+Running migrations:
+  Applying myapp.0001_initial... OK
+
+(env310) E:\file_struct\myproject>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 20, 2026 - 01:48:59
+Django version 5.2.12, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/

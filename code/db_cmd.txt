@@ -1,0 +1,15 @@
+
+
+>sqlite3 db.sqlite3
+
+sqlite> .tables
+
+sqlite> .schema app_userdatamyapp_irisprediction
+
+sqlite> SELECT * FROM myapp_irisprediction;
+
+sqlite>.exit
+
+DELETE FROM myapp_irisprediction WHERE id=1;
+
+SELECT * FROM myapp_irisprediction;
